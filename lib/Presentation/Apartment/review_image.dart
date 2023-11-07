@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class ReviewImages extends StatefulWidget {
@@ -17,6 +18,12 @@ class _ReviewImagesState extends State<ReviewImages> {
         fit: BoxFit.cover,
         height: 400,
       ),
+      //NOT WORKING
+      // child: CachedNetworkImage(
+      //   imageUrl: widget.link,
+      //   fit: BoxFit.cover,
+      //   height: 400,
+      // ),
     );
   }
 }

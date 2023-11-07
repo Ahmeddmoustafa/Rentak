@@ -10,9 +10,9 @@ import 'package:rentak/Domain/Repositories/apartment_repository.dart';
 import 'package:rentak/Domain/Repositories/renter_repository.dart';
 import 'package:rentak/Domain/Usecases/apartment_usecase.dart';
 import 'package:rentak/Domain/Usecases/renter_usecase.dart';
-import 'package:rentak/cubit/apartment_cubit.dart';
-import 'package:rentak/cubit/login_cubit.dart';
-import 'package:rentak/cubit/search_filter_cubit.dart';
+import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
+import 'package:rentak/cubit/Login/login_cubit.dart';
+import 'package:rentak/cubit/SearchFilter/search_filter_cubit.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;

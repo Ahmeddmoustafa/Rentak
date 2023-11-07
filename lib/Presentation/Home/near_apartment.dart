@@ -4,7 +4,7 @@ import 'package:rentak/Resources/Managers/assets_manager.dart';
 import 'package:rentak/Resources/Managers/colors_manager.dart';
 import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
-import 'package:rentak/cubit/apartment_cubit.dart';
+import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
 
 class NearApartments extends StatefulWidget {
   const NearApartments({super.key});

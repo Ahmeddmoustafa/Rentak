@@ -7,7 +7,7 @@ import 'package:searchfield/searchfield.dart';
 part 'search_filter_state.dart';
 
 class SearchFilterCubit extends Cubit<SearchFilterState> {
-  RangeValues rangeValues = const RangeValues(0, 100);
+  RangeValues rangeValues = const RangeValues(0, 10000);
   DateTime? checkInDate;
   final suggestions = [
     SearchFieldListItem("SeaView chalet"),

@@ -50,13 +50,12 @@ class LoginCubit extends Cubit<LoginState> {
     if (EmailValidator.validate(email) && password.length >= 8) {
       // Perform your login/authentication logic here
 
-      // try {
-      //   final user =
-      //       await getRenter(LoginParams(email: email, password: password));
-      // } catch (ServerFailure) {
-      //   debugPrint("server error");
-      // }
-
+      try {
+        final user =
+            await getRenter(LoginParams(email: email, password: password));
+      } catch (serverFailure) {
+        debugPrint("server error");
+      }
       emit(LoginLoading());
 
       return;

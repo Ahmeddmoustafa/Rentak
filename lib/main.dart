@@ -5,9 +5,9 @@ import 'package:rentak/Core/injection_control.dart' as di;
 import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Theme/theme_data.dart';
 import 'package:rentak/Resources/Theme/theme_manager.dart';
-import 'package:rentak/cubit/apartment_cubit.dart';
-import 'package:rentak/cubit/login_cubit.dart';
-import 'package:rentak/cubit/search_filter_cubit.dart';
+import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
+import 'package:rentak/cubit/Login/login_cubit.dart';
+import 'package:rentak/cubit/SearchFilter/search_filter_cubit.dart';
 
 // import 'Cubit/login_cubit.dart';
 // import 'cubit/search_filter_cubit.dart';
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
 
         // home: HomePage(),
         onGenerateRoute: RouteGenerator.getRoute,
-        initialRoute: Routes.loginRoute,
+        initialRoute: Routes.mainRoute,
       ),
     );
   }

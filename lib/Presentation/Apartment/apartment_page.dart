@@ -7,7 +7,7 @@ import 'package:rentak/Resources/Managers/colors_manager.dart';
 import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Managers/strings_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
-import 'package:rentak/cubit/apartment_cubit.dart';
+import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
 
 class ApartmentPage extends StatefulWidget {
   const ApartmentPage({super.key});
@@ -111,10 +111,7 @@ class _ApartmentPageState extends State<ApartmentPage> {
                                   ],
                                 ),
                                 ElevatedButton(
-                                  onPressed: () => {
-                                    Navigator.pushReplacementNamed(
-                                        context, Routes.loginRoute)
-                                  },
+                                  onPressed: () => {},
                                   style: ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(
                                         ColorManager.Black),

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentak/Presentation/Home/category_filter.dart';
 import 'package:rentak/Resources/Managers/colors_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
-import 'package:rentak/cubit/search_filter_cubit.dart';
+import 'package:rentak/cubit/SearchFilter/search_filter_cubit.dart';
 
 class SearchFilter extends StatefulWidget {
   const SearchFilter({super.key});
@@ -39,8 +39,8 @@ class _SearchFilterState extends State<SearchFilter> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<SearchFilterCubit>(context)
-        .setSliderValues(const RangeValues(0, 10000));
+    // BlocProvider.of<SearchFilterCubit>(context)
+    //     .setSliderValues(const RangeValues(0, 10000));
   }
 
   @override
@@ -95,8 +95,16 @@ class _SearchFilterState extends State<SearchFilter> {
                           values: context
                               .read<SearchFilterCubit>()
                               .sliderRangeValue,
-                          min: 0,
-                          max: 10000,
+                          min: context
+                              .read<SearchFilterCubit>()
+                              .sliderRangeValue
+                              .start
+                              .toDouble(),
+                          max: context
+                              .read<SearchFilterCubit>()
+                              .sliderRangeValue
+                              .end
+                              .toDouble(),
                           divisions: 10,
                           onChanged: (RangeValues values) {
                             BlocProvider.of<SearchFilterCubit>(context)

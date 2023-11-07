@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentak/Resources/Managers/routes_manager.dart';
 
-import 'package:rentak/cubit/login_cubit.dart';
+import 'package:rentak/cubit/Login/login_cubit.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

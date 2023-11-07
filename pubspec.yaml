@@ -34,6 +34,7 @@ dependencies:
   email_validator: '^2.1.16'
   searchfield: ^0.8.7
   meta: ^1.9.1
+  cached_network_image: ^3.3.0
 
 
   

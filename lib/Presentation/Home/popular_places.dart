@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentak/Resources/Managers/colors_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
-import 'package:rentak/cubit/theme_cubit.dart';
+import 'package:rentak/cubit/Theme/theme_cubit.dart';
 
 class PopularPlaces extends StatelessWidget {
   const PopularPlaces({super.key});
