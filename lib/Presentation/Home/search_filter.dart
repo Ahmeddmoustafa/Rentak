@@ -95,16 +95,8 @@ class _SearchFilterState extends State<SearchFilter> {
                           values: context
                               .read<SearchFilterCubit>()
                               .sliderRangeValue,
-                          min: context
-                              .read<SearchFilterCubit>()
-                              .sliderRangeValue
-                              .start
-                              .toDouble(),
-                          max: context
-                              .read<SearchFilterCubit>()
-                              .sliderRangeValue
-                              .end
-                              .toDouble(),
+                          min: 0,
+                          max: 10000,
                           divisions: 10,
                           onChanged: (RangeValues values) {
                             BlocProvider.of<SearchFilterCubit>(context)
@@ -143,7 +135,9 @@ class _SearchFilterState extends State<SearchFilter> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          context.read<SearchFilterCubit>().clearFilter();
+                        },
                         child: Row(
                           children: [
                             Text(
@@ -165,6 +159,7 @@ class _SearchFilterState extends State<SearchFilter> {
                       onPressed: () {
                         BlocProvider.of<SearchFilterCubit>(context)
                             .printTheFilter();
+                        Navigator.pop(context);
                       },
                       style: const ButtonStyle(
                           minimumSize: MaterialStatePropertyAll(

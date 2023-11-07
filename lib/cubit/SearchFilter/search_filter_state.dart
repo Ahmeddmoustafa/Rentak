@@ -18,3 +18,9 @@ final class DateSelected extends SearchFilterState {
 
   DateSelected({required this.dateTime});
 }
+
+final class CategoryAdded extends SearchFilterState {}
+
+final class CategoryRemoved extends SearchFilterState {}
+
+final class FilterCleared extends SearchFilterState {}

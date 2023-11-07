@@ -16,9 +16,27 @@ class SearchFilterCubit extends Cubit<SearchFilterState> {
     SearchFieldListItem("Duplex"),
     SearchFieldListItem("Roof Chalet"),
   ];
+  final TextEditingController controller = TextEditingController();
+  List<String> searchedItems = [];
   SearchFilterCubit() : super(SearchFilterInitial());
 
+  /********************* SLIDER PUBLIC FUNCTIONS        *********** */ ///
+
   RangeValues get sliderRangeValue => rangeValues;
+
+  void setSliderValues(RangeValues range) {
+    emit(SearchFilterInitial());
+    rangeValues = range;
+    emit(SliderMoved(rangeValues: rangeValues));
+  }
+
+  /********************* DATE PUBLIC FUNCTIONS******************* */ ///
+
+  void setCheckInDate(DateTime? date) {
+    emit(SearchFilterInitial());
+    checkInDate = date;
+  }
+
   String theCheckInDate() {
     emit(DateSelected(dateTime: checkInDate));
 
@@ -30,15 +48,30 @@ class SearchFilterCubit extends Cubit<SearchFilterState> {
     return "Select a date";
   }
 
-  void setSliderValues(RangeValues range) {
+  /********************* CATEGORY FILTER PUBLIC FUNCTIONS *********** */ ///
+
+  void addCategory(String value) {
     emit(SearchFilterInitial());
-    rangeValues = range;
-    emit(SliderMoved(rangeValues: rangeValues));
+    if (!searchedItems.contains(value)) {
+      searchedItems.add(controller.text);
+    }
+    controller.clear();
+    emit(CategoryAdded());
   }
 
-  void setCheckInDate(DateTime? date) {
+  void removeCategory(int index) {
     emit(SearchFilterInitial());
-    checkInDate = date;
+    searchedItems.removeAt(index);
+    emit(CategoryRemoved());
+  }
+
+  /********************* TOTAL PUBLIC FUNCTIONS *********** */ ///
+
+  void clearFilter() {
+    rangeValues = const RangeValues(0, 10000);
+    checkInDate = null;
+    searchedItems = [];
+    emit(FilterCleared());
   }
 
   void printTheFilter() {
