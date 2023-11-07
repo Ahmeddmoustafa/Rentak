@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentak/Resources/Managers/colors_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
-import 'package:rentak/cubit/Theme/theme_cubit.dart';
 
 class PopularPlaces extends StatelessWidget {
   const PopularPlaces({super.key});
@@ -21,9 +19,7 @@ class PopularPlaces extends StatelessWidget {
         child: Column(
           children: <Widget>[
             GestureDetector(
-              onTap: () {
-                BlocProvider.of<ThemeCubit>(context).toggletheme();
-              },
+              onTap: () {},
               child: Container(
                 width: AppSize.s40,
                 height: AppSize.s40,

@@ -25,7 +25,7 @@ class _CategoryFilterState extends State<CategoryFilter> {
           children: [
             SearchField(
               onSubmit: (value) {},
-              controller: context.read<SearchFilterCubit>().controller,
+              controller: context.read<SearchFilterCubit>().filterController,
               searchInputDecoration: InputDecoration(
                 enabledBorder: Theme.of(context)
                     .inputDecorationTheme

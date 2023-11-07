@@ -24,3 +24,9 @@ final class CategoryAdded extends SearchFilterState {}
 final class CategoryRemoved extends SearchFilterState {}
 
 final class FilterCleared extends SearchFilterState {}
+
+final class FilterApplied extends SearchFilterState {
+  final FilterOptions filterOptions;
+
+  FilterApplied({required this.filterOptions});
+}

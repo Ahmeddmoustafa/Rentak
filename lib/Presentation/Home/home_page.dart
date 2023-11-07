@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                   clipBehavior: Clip.none,
                   children: [
                     Container(
-                      height: MediaQuery.of(context).size.height * 0.37,
+                      height: MediaQuery.of(context).size.height * 0.35,
                     ),
                     Positioned(
                       top: 0,
@@ -55,10 +55,10 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Positioned(
-                      bottom: MediaQuery.of(context).size.height * 0.01,
+                      bottom: MediaQuery.of(context).size.height * 0.0,
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width * 0.8,
-                        height: MediaQuery.of(context).size.height * 0.1,
+                        height: MediaQuery.of(context).size.height * 0.09,
                         child: TextField(
                           decoration: InputDecoration(
                               filled: true,

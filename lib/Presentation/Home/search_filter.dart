@@ -158,7 +158,7 @@ class _SearchFilterState extends State<SearchFilter> {
                     child: ElevatedButton(
                       onPressed: () {
                         BlocProvider.of<SearchFilterCubit>(context)
-                            .printTheFilter();
+                            .applyTheFilter();
                         Navigator.pop(context);
                       },
                       style: const ButtonStyle(

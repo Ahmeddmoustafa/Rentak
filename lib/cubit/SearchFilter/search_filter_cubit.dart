@@ -16,7 +16,7 @@ class SearchFilterCubit extends Cubit<SearchFilterState> {
     SearchFieldListItem("Duplex"),
     SearchFieldListItem("Roof Chalet"),
   ];
-  final TextEditingController controller = TextEditingController();
+  final TextEditingController filterController = TextEditingController();
   List<String> searchedItems = [];
   SearchFilterCubit() : super(SearchFilterInitial());
 
@@ -53,9 +53,9 @@ class SearchFilterCubit extends Cubit<SearchFilterState> {
   void addCategory(String value) {
     emit(SearchFilterInitial());
     if (!searchedItems.contains(value)) {
-      searchedItems.add(controller.text);
+      searchedItems.add(filterController.text);
     }
-    controller.clear();
+    filterController.clear();
     emit(CategoryAdded());
   }
 
@@ -74,8 +74,29 @@ class SearchFilterCubit extends Cubit<SearchFilterState> {
     emit(FilterCleared());
   }
 
-  void printTheFilter() {
+  void applyTheFilter() {
+    emit(SearchFilterInitial());
     debugPrint(
         "you have selected a villa with price range ${rangeValues.start.round()} EGP to ${rangeValues.end.round()} EGP on ${checkInDate?.day}/${checkInDate?.month} ");
+    final filterOptions = FilterOptions(
+        startPrice: rangeValues.start.round().toInt(),
+        endPrice: rangeValues.end.round().toInt(),
+        checkinDate: checkInDate == null ? DateTime.now() : checkInDate!,
+        categories: searchedItems);
+
+    emit(FilterApplied(filterOptions: filterOptions));
   }
+}
+
+class FilterOptions {
+  final int startPrice;
+  final int endPrice;
+  final DateTime checkinDate;
+  final List<String> categories;
+
+  FilterOptions(
+      {required this.startPrice,
+      required this.endPrice,
+      required this.checkinDate,
+      required this.categories});
 }
