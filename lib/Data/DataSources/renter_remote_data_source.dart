@@ -1,7 +1,7 @@
 import 'package:http/http.dart' as http;
-import 'package:rentak/Core/Errors/failures.dart';
+import 'package:rentak/Core/Errors/exceptions.dart';
 import 'package:rentak/Data/Models/renter_model.dart';
-import 'package:rentak/Domain/Entities/renter.dart';
+import 'package:rentak/Domain/Entities/Users/renter.dart';
 
 abstract class RenterRemoteDataSource {
   Future<Renter> getRenter(String email, String password);
@@ -19,7 +19,7 @@ class RenterRemoteDataSourceImpl implements RenterRemoteDataSource {
       // print(response.body);
       return model;
     } else {
-      throw ServerFailure();
+      throw ServerException();
     }
   }
 }

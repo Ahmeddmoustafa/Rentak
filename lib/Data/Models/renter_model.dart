@@ -1,4 +1,4 @@
-import 'package:rentak/Domain/Entities/renter.dart';
+import 'package:rentak/Domain/Entities/Users/renter.dart';
 
 class RenterModel extends Renter {
   const RenterModel({

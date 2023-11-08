@@ -25,7 +25,7 @@ class ApartmentRepositoryImpl implements ApartmentRepository {
         apartmentLocalDataSourceImpl.cacheApartment(apartments);
         return Right(apartments);
       } on ServerException {
-        return Left(ServerFailure());
+        return Left(ServerFailure(msg: "server error"));
       }
     } else {
       try {
@@ -33,7 +33,7 @@ class ApartmentRepositoryImpl implements ApartmentRepository {
             await apartmentLocalDataSourceImpl.getLastApartment();
         return Right(apartments);
       } on CacheException {
-        return Left(CachFailure());
+        return Left(CacheFailure(msg: "cache error"));
       }
     }
   }

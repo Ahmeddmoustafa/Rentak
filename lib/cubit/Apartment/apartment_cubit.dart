@@ -44,7 +44,7 @@ class ApartmentCubit extends Cubit<ApartmentState> {
       case ServerFailure:
         return "SERVER_FAILURE";
 
-      case CachFailure:
+      case CacheFailure:
         return "CACHE_FAILUR";
 
       default:

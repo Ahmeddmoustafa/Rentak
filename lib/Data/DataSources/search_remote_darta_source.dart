@@ -35,11 +35,3 @@ class SearchRemoteDataSourceImpl implements SearchRemoteDataSource {
     }
   }
 }
-
-class FirebaseSearchRemoteDataSource implements SearchRemoteDataSource {
-  @override
-  Future<List<Apartment>> getSearchResults() {
-    // TODO: implement getSearchResults
-    throw UnimplementedError();
-  }
-}

@@ -9,9 +9,7 @@ import 'package:rentak/Data/Repositories/renter_repository.dart';
 import 'package:rentak/Domain/Repositories/apartment_repository.dart';
 import 'package:rentak/Domain/Repositories/renter_repository.dart';
 import 'package:rentak/Domain/Usecases/apartment_usecase.dart';
-import 'package:rentak/Domain/Usecases/renter_usecase.dart';
 import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
-import 'package:rentak/cubit/Login/login_cubit.dart';
 import 'package:rentak/cubit/SearchFilter/search_filter_cubit.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
@@ -74,18 +72,18 @@ Future<void> init() async {
       apartmentRepository: sl(),
     ),
   );
-  sl.registerLazySingleton<GetRenter>(
-    () => GetRenter(
-      renterRepository: sl(),
-    ),
-  );
+  // sl.registerLazySingleton<GetRenter>(
+  //   () => GetRenter(
+  //     renterRepository: sl(),
+  //   ),
+  // );
 
   sl.registerFactory(
     () => ApartmentCubit(
       getApartments: sl(),
     ),
   );
-  sl.registerFactory(() => LoginCubit(getRenter: sl()));
+  // sl.registerFactory(() => LoginCubit(getRenter: sl()));
 
   sl.registerFactory(() => SearchFilterCubit());
 }
