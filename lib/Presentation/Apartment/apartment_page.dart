@@ -7,6 +7,8 @@ import 'package:rentak/Resources/Managers/colors_manager.dart';
 import 'package:rentak/Resources/Managers/strings_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
 import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
+import 'package:rentak/cubit/ApartmentSlider/apartment_slider_cubit.dart';
+import 'package:rentak/cubit/AppBar/appbar_cubit.dart';
 
 class ApartmentPage extends StatefulWidget {
   const ApartmentPage({super.key});
@@ -16,31 +18,27 @@ class ApartmentPage extends StatefulWidget {
 }
 
 class _ApartmentPageState extends State<ApartmentPage> {
-  Color appBarColor = ColorManager.Transparent;
-  bool scrolled = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: PreferredSize(
-        preferredSize: const Size(0, 50),
-        child: ApartmentAppBar(
-          scrolled: scrolled,
+        preferredSize: const Size(0, AppSize.s50),
+        child: BlocBuilder<AppBarCubit, AppBarState>(
+          builder: (context, state) {
+            return ApartmentAppBar(
+              scrolled: context.read<AppBarCubit>().scrolled,
+            );
+          },
         ),
       ),
       body: NotificationListener<ScrollNotification>(
         onNotification: (ScrollNotification notification) {
           if (notification is ScrollUpdateNotification) {
-            if (notification.metrics.axis == Axis.vertical) {
-              setState(() {
-                scrolled = notification.metrics.pixels >
-                        MediaQuery.of(context).size.height * 0.35
-                    ? true
-                    : false;
-              });
-            }
+            return context.read<AppBarCubit>().isScrolled(
+                notification, MediaQuery.of(context).size.height * 0.4);
           }
+
           return false;
         },
         child: SingleChildScrollView(
@@ -51,7 +49,10 @@ class _ApartmentPageState extends State<ApartmentPage> {
                 children: [
                   Container(
                     margin: const EdgeInsets.only(bottom: AppMargin.m4),
-                    child: const ApartmentImage(),
+                    child: BlocProvider(
+                      create: (context) => ApartmentSliderCubit(),
+                      child: const ApartmentImage(),
+                    ),
                   ),
                   Container(
                     width: MediaQuery.of(context).size.width,
