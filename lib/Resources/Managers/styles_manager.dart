@@ -23,7 +23,7 @@ TextStyle _getTextStyle(FontWeight weight, double fontsize, Color color) {
 TextStyle getRegularStyle(
     {required Color color, double fontsize = FontSize.s12}) {
   return _getTextStyle(
-    FontWeightManager.bold,
+    FontWeightManager.regular,
     fontsize,
     color,
   );
