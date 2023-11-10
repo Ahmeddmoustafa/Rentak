@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:rentak/Core/Errors/failures.dart';
 import 'package:rentak/Domain/Entities/Users/renter.dart';
+import 'package:rentak/Domain/Entities/review.dart';
 import 'package:rentak/Domain/Usecases/Renter/sign_in_renter_usecase.dart';
 import 'package:rentak/Domain/Usecases/Renter/sign_up_renter_usecase.dart';
+import 'package:rentak/Domain/Usecases/RenterReview/create_review_usecase.dart';
 
 abstract class FirebaseRepository {
   // CREDENTIALS
@@ -16,4 +18,9 @@ abstract class FirebaseRepository {
   Future<Either<Failure, Renter>> getRenter(String renterID);
   Future<Either<Failure, void>> updateRenter();
   Future<Either<Failure, void>> deleteRenter(String renterID);
+
+  // USER: RENTER -- REVIEWS
+  Future<Either<Failure, Review>> createReview(ReviewParams params);
+  Future<Either<Failure, Review>> updateReview(ReviewParams params);
+  Future<Either<Failure, void>> deleteReview(String reviewID);
 }

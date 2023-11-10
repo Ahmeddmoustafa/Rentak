@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentak/Presentation/Apartment/apartment_page.dart';
 import 'package:rentak/Presentation/Home/home_page.dart';
 import 'package:rentak/Presentation/Login/login_page.dart';
 import 'package:rentak/Resources/Managers/strings_manager.dart';
+import 'package:rentak/cubit/AppBar/appbar_cubit.dart';
 
 class Routes {
   static const String mainRoute = '/main';
@@ -29,7 +31,11 @@ class RouteGenerator {
       case Routes.apartmentRoute:
         {
           return MaterialPageRoute(
-              builder: (context) => SafeArea(child: ApartmentPage()));
+              builder: (context) => SafeArea(
+                      child: BlocProvider(
+                    create: (context) => AppBarCubit(),
+                    child: ApartmentPage(),
+                  )));
         }
       case Routes.loginRoute:
         {
