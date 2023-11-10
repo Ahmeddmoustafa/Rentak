@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rentak/Resources/Managers/styles_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
+import 'package:rentak/Resources/Managers/fonts_manager.dart';
 
 class CustomIcon extends StatelessWidget {
   const CustomIcon({
@@ -23,7 +24,7 @@ class CustomIcon extends StatelessWidget {
       elevation: 10,
       borderRadius: BorderRadius.circular(width * .5),
       child: Container(
-        width: width * .15,
+        width: width * .20,
         padding: const EdgeInsets.all(AppPadding.p8),
         decoration: BoxDecoration(
           color: color,
@@ -46,7 +47,7 @@ class CustomIcon extends StatelessWidget {
               text,
               style: getRegularStyle(
                 color: circleColor,
-                fontsize: AppSize.s16,
+                fontsize: FontSize.s12,
               ),
             ),
           ],

@@ -146,7 +146,7 @@ class CustomVillaCard extends StatelessWidget {
               ),
             ),
             Positioned.fill(
-              top: height * .05,
+              top: height * .01,
               right: width * .01,
               child: Align(
                 alignment: Alignment.centerRight,

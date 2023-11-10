@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rentak/Presentation/Home/widgets/custom_villa_card.dart';
 import 'package:rentak/Resources/Managers/colors_manager.dart';
+import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Managers/styles_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
 
@@ -66,15 +67,20 @@ class RecommendationListWidget extends StatelessWidget {
             children: List.generate(
               units.length,
               (index) {
-                return CustomVillaCard(
-                  image: units[index]['image'],
-                  price: units[index]['price'],
-                  bedrooms: units[index]['bedrooms'],
-                  bathrooms: units[index]['bathrooms'],
-                  duration: units[index]['duration'],
-                  address: units[index]['address'],
-                  rate: units[index]['rate'],
-                  type: units[index]['type'],
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, Routes.detailsRoute);
+                  },
+                  child: CustomVillaCard(
+                    image: units[index]['image'],
+                    price: units[index]['price'],
+                    bedrooms: units[index]['bedrooms'],
+                    bathrooms: units[index]['bathrooms'],
+                    duration: units[index]['duration'],
+                    address: units[index]['address'],
+                    rate: units[index]['rate'],
+                    type: units[index]['type'],
+                  ),
                 );
               },
             ),

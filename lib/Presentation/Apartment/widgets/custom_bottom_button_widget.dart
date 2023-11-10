@@ -23,7 +23,7 @@ class CustomBottomButtonWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(width * .01),
         child: Container(
           width: width,
-          height: height * .10,
+          height: height * .12,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(width * .01),
           ),
@@ -44,14 +44,14 @@ class CustomBottomButtonWidget extends StatelessWidget {
                       "${apartement['price']} EGP/${apartement['duration']}",
                       style: getBoldStyle(
                         color: ColorManager.Blue,
-                        fontsize: FontSize.s22,
+                        fontsize: FontSize.s20,
                       ),
                     ),
                     Text(
                       "${apartement['type']}",
                       style: getRegularStyle(
                         color: ColorManager.DarkGrey,
-                        fontsize: FontSize.s18,
+                        fontsize: FontSize.s14,
                       ),
                     ),
                   ],

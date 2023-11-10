@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentak/Core/injection_control.dart' as di;
-import 'package:rentak/Presentation/Apartment/apartement_details_screen.dart';
-
+import 'package:rentak/Resources/Managers/routes_manager.dart';
 // import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Theme/theme_data.dart';
 import 'package:rentak/Resources/Theme/theme_manager.dart';
@@ -50,9 +49,9 @@ class MyApp extends StatelessWidget {
         darkTheme: getApplicationtheme(true),
         // themeMode: state.themeMode,
 
-        home: const ApartementDetailsScreen(),
-        // onGenerateRoute: RouteGenerator.getRoute,
-        // initialRoute: Routes.mainRoute,
+        // home: const ApartementDetailsScreen(),
+        onGenerateRoute: RouteGenerator.getRoute,
+        initialRoute: Routes.homeRoute,
       ),
     );
   }
