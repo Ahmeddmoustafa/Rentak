@@ -1,10 +1,21 @@
-import 'package:rentak/Domain/Entities/Users/renter.dart';
+// ignore_for_file: annotate_overrides, overridden_fields
 
+import 'package:hive/hive.dart';
+import 'package:rentak/Domain/Entities/Users/renter.dart';
+part 'renter_model.g.dart';
+
+@HiveType(typeId: 2)
 class RenterModel extends Renter {
+  @HiveField(0)
+  final String name;
+  @HiveField(1)
+  final String id;
+  @HiveField(2)
+  final String image;
   const RenterModel({
-    required final String name,
-    required final String id,
-    required final String image,
+    required this.name,
+    required this.id,
+    required this.image,
   }) : super(name: name, id: id, image: image);
 
   factory RenterModel.fromJson(Map<String, dynamic> json) => RenterModel(

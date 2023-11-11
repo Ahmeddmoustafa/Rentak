@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:rentak/Core/Errors/exceptions.dart';
 import 'package:rentak/Data/Models/apartment_model.dart';
 import 'package:rentak/Domain/Entities/apartment.dart';
