@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rentak/Core/injection_control.dart' as di;
 import "package:hive_flutter/hive_flutter.dart";
 import 'package:rentak/Resources/Managers/routes_manager.dart';
+// import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Theme/theme_data.dart';
 import 'package:rentak/Resources/Theme/theme_manager.dart';
 import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
@@ -16,7 +18,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   await di.init();
-  runApp(MyApp());
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitDown,
+    DeviceOrientation.portraitUp,
+  ]);
+  runApp(
+    MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -43,9 +51,9 @@ class MyApp extends StatelessWidget {
         darkTheme: getApplicationtheme(true),
         // themeMode: state.themeMode,
 
-        // home: HomePage(),
+        // home: const ApartementDetailsScreen(),
         onGenerateRoute: RouteGenerator.getRoute,
-        initialRoute: Routes.mainRoute,
+        initialRoute: Routes.homeRoute,
       ),
     );
   }
