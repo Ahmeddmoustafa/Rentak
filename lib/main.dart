@@ -51,9 +51,8 @@ class MyApp extends StatelessWidget {
         darkTheme: getApplicationtheme(true),
         // themeMode: state.themeMode,
 
-        // home: const ApartementDetailsScreen(),
         onGenerateRoute: RouteGenerator.getRoute,
-        initialRoute: Routes.homeRoute,
+        initialRoute: Routes.loginRoute,
       ),
     );
   }

@@ -1,4 +1,3 @@
-import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
 import 'package:rentak/Core/Errors/exceptions.dart';
 import 'package:rentak/Data/Models/renter_model.dart';
@@ -11,7 +10,7 @@ abstract class RenterRemoteDataSource {
 class RenterRemoteDataSourceImpl implements RenterRemoteDataSource {
   @override
   Future<Renter> getRenter(String email, String password) async {
-    print("$email recieved");
+    // print("$email recieved");
     final uri = Uri.parse("https://reqres.in/api/login");
     final response = await http.Client()
         .post(uri, body: {"email": email, "password": password});
