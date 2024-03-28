@@ -54,7 +54,7 @@ class _SearchFilterState extends State<SearchFilter> {
           ),
           child: Container(
             height: MediaQuery.of(context).size.height * 0.65,
-            width: MediaQuery.of(context).size.width * 0.6,
+            // width: MediaQuery.of(context).size.width * 0.6,
             decoration: BoxDecoration(
               color: ColorManager.LightSilver,
               borderRadius: const BorderRadius.only(

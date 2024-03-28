@@ -15,6 +15,7 @@ class AppBarCubit extends Cubit<AppBarState> {
 
     if (notification.metrics.axis == Axis.vertical) {
       scrolled = notification.metrics.pixels > height ? true : false;
+      print("app bar scrolled $scrolled");
     }
     emit(IsAppBarScrolled());
     return scrolled;

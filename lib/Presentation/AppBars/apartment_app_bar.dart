@@ -22,6 +22,8 @@ class _ApartmentAppBarState extends State<ApartmentAppBar> {
     if (!widget.scrolled) {
       return AppBar(
         backgroundColor: ColorManager.Transparent,
+        foregroundColor: ColorManager.Transparent,
+        surfaceTintColor: ColorManager.Transparent,
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacementNamed(context, Routes.mainRoute);
@@ -41,11 +43,12 @@ class _ApartmentAppBarState extends State<ApartmentAppBar> {
           )
         ],
         elevation: 0,
-        shadowColor: ColorManager.LightSilver,
+        shadowColor: ColorManager.Transparent,
       );
     } else {
+      print("ssorry the app bar is scrolled");
       return AppBar(
-        shadowColor: ColorManager.LightSilver,
+        shadowColor: ColorManager.Transparent,
         backgroundColor: ColorManager.Transparent,
         leading: IconButton(
           onPressed: () {

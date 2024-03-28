@@ -4,6 +4,7 @@ import 'package:rentak/Presentation/Apartment/apartment_image.dart';
 import 'package:rentak/Presentation/Apartment/apartment_review.dart';
 import 'package:rentak/Presentation/AppBars/apartment_app_bar.dart';
 import 'package:rentak/Resources/Managers/colors_manager.dart';
+import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Managers/strings_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
 import 'package:rentak/cubit/Apartment/apartment_cubit.dart';
@@ -119,7 +120,10 @@ class _ApartmentPageState extends State<ApartmentPage> {
                                       Size(AppSize.s25, AppSize.s30),
                                     ),
                                   ),
-                                  child: const Text(AppStrings.bookNow),
+                                  child: GestureDetector(
+                                      onTap: () => Navigator.pushNamed(
+                                          context, Routes.homeRoute),
+                                      child: const Text(AppStrings.bookNow)),
                                 )
                               ],
                             ),

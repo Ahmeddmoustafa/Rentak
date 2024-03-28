@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rentak/Resources/Managers/colors_manager.dart';
 import 'package:rentak/Resources/Managers/routes_manager.dart';
 
 import 'package:rentak/cubit/Login/login_cubit.dart';
@@ -33,6 +34,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Login Form'),
       ),
       body: Center(
@@ -69,7 +71,10 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       _login(state);
                     },
-                    child: const Text("Login"),
+                    child: Text(
+                      "Login",
+                      style: TextStyle(color: ColorManager.White),
+                    ),
                   ),
                 ],
               );

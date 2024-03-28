@@ -32,7 +32,7 @@ class CustomVillaCard extends StatelessWidget {
       elevation: 2,
       borderRadius: BorderRadius.circular(width * .01),
       child: Container(
-        height: width * .23,
+        height: width * .3,
         width: width * .23,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(width * .01),

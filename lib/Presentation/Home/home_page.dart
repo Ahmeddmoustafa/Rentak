@@ -4,6 +4,7 @@ import 'package:rentak/Presentation/Home/near_apartment.dart';
 import 'package:rentak/Presentation/Home/popular_places.dart';
 import 'package:rentak/Presentation/Home/search_filter.dart';
 import 'package:rentak/Resources/Managers/colors_manager.dart';
+import 'package:rentak/Resources/Managers/routes_manager.dart';
 import 'package:rentak/Resources/Managers/values_manager.dart';
 
 class HomePage extends StatefulWidget {
@@ -69,9 +70,13 @@ class _HomePageState extends State<HomePage> {
                                 borderSide:
                                     BorderSide(color: ColorManager.LightGrey),
                               ),
-                              suffixIcon: Icon(
-                                Icons.arrow_forward,
-                                color: ColorManager.Black,
+                              suffixIcon: GestureDetector(
+                                onTap: () => Navigator.pushNamed(
+                                    context, Routes.homeRoute),
+                                child: Icon(
+                                  Icons.arrow_forward,
+                                  color: ColorManager.Black,
+                                ),
                               ),
                               hintText: "Search for a villa or location",
                               prefixIcon: IconButton(
